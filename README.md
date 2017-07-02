@@ -1,2 +1,2 @@
 # helo-world
-My firs repository
+I wrote something about myself.
