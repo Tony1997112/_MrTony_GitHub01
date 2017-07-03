@@ -1,9 +1,266 @@
-*{
-	font-family: Helvetica;
+﻿*{
+	outline:none;
 }
 
-h1, h2 {
-	font-size: 15px;
+input:focus{
+	border: 1px dashed #4a4a4a;;
+}
+@font-face {
+    font-family: 'pricedown';
+    src: url('pricedown.ttf') format('truetype');
 }
 
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    margin:0;
+    background-color: #1a1a1a;
+    color:white;
+}
 
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+}
+
+h1 {
+    font-size: 40pt;
+    color: white;
+    text-shadow: 0px 0px 8px #777777;
+    text-align: center;
+    font-family:pricedown, sans-serif;
+}
+
+.page {
+    width: calc(70% - 24px);;
+    margin: 2% 15%;
+    padding: 20px;
+    background-color: #272727;
+    border: 1px solid #474747;
+    float:left;
+    box-shadow: 0 4px 20px black;
+	border-radius: 5px; /* added by d3 */
+}
+
+p.separator {
+    width: 100%;
+    height: 3px;
+    border-top: 1px solid #434343;
+    margin: 20px 0;
+    float: left;
+    position: static;
+}
+
+img.imgSlider {
+    width: 60%;
+    height: auto;
+
+    border: 1px solid #474747;
+    box-shadow: 7px 7px 10px -3px #1f1f1f;
+}
+
+img.imgSlider:hover {
+    cursor: pointer;
+}
+
+div.firstRight{
+    float:right;
+    width:37.5%;
+    font-size: 14pt;
+	height: 300px;
+    text-align: justify;
+}
+
+p.joinDiscord{
+    float:right;
+    font-family: pricedown, sans-serif;
+    font-size: 30px;
+    letter-spacing: 0.8px;
+    color: #738bd7;
+}
+
+div.secondLeft{
+    float:left;
+    width: calc(100% - 350px - 2.5%);
+    min-width: 500px;
+    overflow: hidden;
+    word-wrap: break-word;
+}
+
+div.secondLeft ul{
+     list-style-type: none;
+     padding:0;
+}
+
+div.secondLeft ol li{
+    transition: 0.5s ease;
+}
+
+div.secondLeft ol li:hover{
+    transition: 0.5s ease;
+    cursor: pointer;
+    color:#c3c3c3;
+}
+
+div.secondLeft ul li ul{
+    list-style-type: none;
+    padding: 5px 0 0 20px;
+}
+
+div.secondLeft ul li{
+    font-weight: bold;
+    margin-top:30px;
+}
+
+div.secondLeft ul li ul li{
+    font-weight: normal;
+    color:#919191;
+    margin-top:0;
+}
+
+a, a:visited, a:hover{
+    color: #b4b4b4;
+}
+
+a.discordLink{
+    color:#738bd7;
+    text-decoration: none;
+}
+
+div.authStatus{
+    width:350px;
+    border:1px solid #474747;
+    height:100px;
+    float:right;
+    text-align: center;
+    font-family:pricedown, sans-serif;
+    font-size:20pt;
+    background-color: #2b2b2b;
+    box-shadow: 0 2px 10px #1b1b1b;
+}
+
+div.authStatus .online{
+    color:green;
+    font-size:30pt;
+}
+
+div.authStatus .offline{
+    color:red;
+    font-size:30pt;
+}
+
+input{
+    font-family: Roboto, sans-serif;
+}
+
+input{
+    background-color: #2f2f2f;
+    border: 1px solid #4a4a4a;
+    padding: 3px;
+    width: 100%;
+    margin-bottom: 5px;
+    color: #d0d0d0;
+}
+
+div.box{
+    width:calc(48% - 20px);
+    border: 1px solid #434343;
+    background-color: #232323;
+    box-shadow: 0 6px 10px #1d1d1d;
+    padding:10px;
+}
+
+div.box.right{
+    float:right;
+}
+div.box.left{
+    float:left;
+}
+
+div.box.center{
+    float:left;
+    width:calc(100% - 22px);
+    margin-bottom: 3%;
+}
+
+p.header{
+    color:white;
+    width: 100%;
+    margin: 0 0 15px 0;
+    border-bottom: 1px solid #434343;
+    font-size: 14pt;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-shadow: 0 0 6px #949494;
+}
+
+table{
+    border-collapse: collapse;
+}
+
+tr{
+    transition: cubic-bezier(0, 0, 0, 0.82) 0.7s;
+}
+
+tr:hover{
+    /*transform: scale(1.05);*/
+    text-shadow: 0 0 5px #bbbbbb;
+}
+
+p.message{
+    position: fixed;
+    bottom:20px;
+    left:20px;
+    background-color: #272727;
+    border: 1px solid #474747;
+    padding: 5px;
+    box-shadow: 0 6px 10px 1px #171717;
+}
+
+#noti{
+	display: none;
+	position: fixed;
+	padding: 5px;
+	width: 300px;
+	background-color: #232323;
+	color: white;
+	height: 50px;
+	border: 1px solid #434343;
+	box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.64);
+	bottom: -210px;
+	left: 20px;
+	font-size: 10pt;
+}
+
+#cm{
+	display: none;
+    position: fixed;
+    padding: 5px;
+    box-shadow: 3px 3px 10px 0px rgba(0, 0, 0, 0.56);
+    width: 150px;
+    height: auto;
+    border: 1px solid #4a4a4a;
+    background-color: #272727;
+    font-size: 10pt;
+    list-style-type: none;
+}
+
+#cm li{
+	border-bottom: 1px solid #4a4a4a;
+    border-top: 1px solid #4a4a4a;
+    padding: 4px;
+}
+
+#cm li:first-child{
+	border-top: 0;
+	padding-top: 0;
+}
+#cm li:last-child{
+	border-bottom: 0;
+	padding-bottom: 0;
+}
+#cm li:hover{
+	cursor: pointer;
+}
+
+input:disabled {
+    filter: brightness(50%);
+}}
